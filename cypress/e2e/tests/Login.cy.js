@@ -20,6 +20,7 @@ describe("Amazon Screen Tests", () => {
     it("[Desktop] Verify page structure", () => {
       cy.viewport(Cypress.env("desktop"));
 
-      
+      home.loginButton().click(); 
+      login.createAccountButton().click();
     });
   });
