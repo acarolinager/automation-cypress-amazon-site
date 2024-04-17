@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "open": "npx cypress open",
+
+    "guest:outback_tests": "npx cypress run --spec 'cypress/e2e/tests_outback/guest/*.cy.js' --browser chrome",
+    "signed:outback_tests": "npx cypress run --spec 'cypress/e2e/tests_outback/sign_in/*.cy.js' --browser chrome",
+
+    "guest:carrabbas_tests": "npx cypress run --spec 'cypress/e2e/tests_carrabbas/guest/*.cy.js' --browser chrome",
+    "signed:carrabbas_tests": "npx cypress run --spec 'cypress/e2e/tests_carrabbas/sign_in/*.cy.js' --browser chrome",
+
+    "guest:bonefishgrill_tests": "npx cypress run --spec 'cypress/e2e/tests_bonefishgrill/guest/*.cy.js' --browser chrome",
+    "signed:bonefishgrill_tests": "npx cypress run --spec 'cypress/e2e/tests_bonefishgrill/sign_in/*.cy.js' --browser chrome",
+
+    "one:test": "npx cypress run --spec $npm_config_file",
+    "merge:reports": "jrm automation-report.xml \"results/*.xml\"",
+    "on:cloud": "npx cypress run --record --key 2bd0aa82-c932-49e4-b0c2-c2bf6b752c72"
+  },
+  "devDependencies": {
+    "cypress": "^13.2.0",
+    "cypress-file-upload": "^5.0.8",
+    "junit-report-merger": "^6.0.2",
+    "mochawesome": "^7.1.3"
+  },
+  "dependencies": {
+    "mocha-junit-reporter": "^2.2.1"
+  }
+}
