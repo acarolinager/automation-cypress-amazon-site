@@ -22,5 +22,29 @@ describe("Amazon Screen Tests", () => {
 
       home.loginButton().click(); 
       login.createAccountButton().click();
+
+      login.inputName().click();
+      login.sendButton().click();
+      login.errorInputNameInBlank().should('have.text' , '\n  Insira seu nome\n');
+      login.errorInputEmailInBlank().should('have.text' , '\n  Digite seu e-mail ou número de telefone celular\n');
+      login.errorInputPasswordInBlank().should('have.text' , '\n  Mínimo de 6 caracteres necessários\n');
+
+      login.inputName().click();
+      login.inputName().type("@test");
+
+      login.inputEmail().click();
+      login.inputEmail().type("%1234%");
+      
+      login.inputPassword().click();
+      login.inputPassword().type("123");
+
+      login.inputConfirmationPassword().click();
+      login.inputConfirmationPassword().type("12");
+
+      login.sendButton().click();
+
+      login.errorInputEmail().should('have.text' , '\n  Endereço de e-mail ou número de telefone celular errado ou inválido. Corrija e tente novamente.\n');
+      login.errorInputPassword().should('have.text' , '\n  Mínimo de 6 caracteres necessários\n');
+      login.errorInputConfirmPassword().should('have.text' , '\n  As senhas não são iguais\n');
     });
   });
