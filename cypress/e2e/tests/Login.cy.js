@@ -10,9 +10,14 @@ describe("Amazon Screen Tests", () => {
     const cart = new CartPage();
     const login = new LoginPage();
     const product = new ProductPage();
+    const loginUrl = "https://www.amazon.com.br/ap/register?showRememberMe=true&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com.br%2F%3Fref_%3Dnav_ya_signin&prevRID=72PEA78QK9J9E3Z77DVJ&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=brflex&openid.mode=checkid_setup&prepopulatedLoginId=&failedSignInCount=0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=brflex&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
   
     beforeEach(() => {
-      cy.visit("https://www.amazon.com.br/");
+      cy.clearAllCookies();
+      cy.clearAllLocalStorage();
+      cy.clearAllSessionStorage();
+
+      cy.visit(loginUrl);
 
       cy.viewport(Cypress.env("desktop"));
     });
@@ -20,8 +25,8 @@ describe("Amazon Screen Tests", () => {
     it("[Desktop] Verify page structure", () => {
       cy.viewport(Cypress.env("desktop"));
 
-      home.loginButton().click(); 
-      login.createAccountButton().click();
+      // home.loginButton().click(); 
+      // login.createAccountButton().click();
 
       login.inputName().click();
       login.sendButton().click();
