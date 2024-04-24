@@ -12,6 +12,10 @@ describe("Amazon Screen Tests", () => {
     const product = new ProductPage();
   
     beforeEach(() => {
+      cy.clearAllCookies();
+      cy.clearAllLocalStorage();
+      cy.clearAllSessionStorage();
+      
       cy.visit("https://www.amazon.com.br/");
 
       cy.viewport(Cypress.env("desktop"));

@@ -1,22 +1,6 @@
 class ProductPage {
-    product01(){
-      return cy.get('[data-asin="8598078301"] > .sg-col-inner > .s-widget-container > [data-action="puis-card-container-declarative"] > .puis-card-container > .a-spacing-base > .a-spacing-small > [data-cy="title-recipe"] > .a-size-mini > .a-link-normal > .a-size-base-plus');
-    }
-
-    product02(){
-        return cy.get('[data-asin="8598078352"] > .sg-col-inner > .s-widget-container > [data-action="puis-card-container-declarative"] > .puis-card-container > .a-spacing-base > .a-spacing-small > [data-cy="title-recipe"] > .a-size-mini > .a-link-normal > .a-size-base-plus');
-      }
-
-    product03(){
-      return cy.get('[data-asin="8598078417"] > .sg-col-inner > .s-widget-container > [data-action="puis-card-container-declarative"] > .puis-card-container > .a-spacing-base > .a-spacing-small > [data-cy="title-recipe"] > .a-size-mini > .a-link-normal > .a-size-base-plus');
-    }
-
-    product04(){
-      return cy.get('[data-asin="B009M8CY7S"] > .sg-col-inner > .s-widget-container > [data-action="puis-card-container-declarative"] > .puis-card-container > .a-spacing-base > .a-spacing-small > [data-cy="title-recipe"] > .a-size-mini > .a-link-normal > .a-size-base-plus');
-    }
-
-    product05(){
-      return cy.get('[data-asin="6555600292"] > .sg-col-inner > .s-widget-container > [data-action="puis-card-container-declarative"] > .puis-card-container > .a-spacing-base > .a-spacing-small > [data-cy="title-recipe"] > .a-size-mini > .a-link-normal > .a-size-base-plus');
+    product(){
+      return cy.get('#productTitle');
     }
 
     secondOption(){
@@ -30,9 +14,35 @@ class ProductPage {
     customerReviewArea(){
       return cy.get('#cm_cr_dp_d_rating_histogram > :nth-child(1) > h2');
     }
-    
+
     addCartButton(){
       return cy.get('#add-to-cart-button');
+    }
+
+    searchBook01(){
+      this.product().contains("Crepúsculo: (Série Crepúsculo): 1");
+      this.addCartButton().click();
+    }
+
+    searchBook02(){
+      this.product().contains("Lua nova: (Série Crepúsculo): 2");
+      this.addCartButton().click();
+    }
+
+    searchBook03(){
+      this.product().contains("Eclipse: (Série Crepúsculo): 3");
+      this.addCartButton().click();
+    }
+
+    searchBook04(){
+      this.product().contains("Amanhecer (Crepúsculo Livro 4)");
+      this.secondOption().click();
+      this.addCartButton().click();
+    }
+
+    searchBook05(){
+      this.product().contains("Sol da meia-noite: (Midnight Sun) - Série Crepúsculo: 5");
+      this.addCartButton().click();
     }
 }
 
