@@ -42,4 +42,5 @@ module.exports = {
     defaultCommandTimeout: 10000,
     defaultBrowser: 'chrome'
   },
+  watchForFileChanges: false,
 };
