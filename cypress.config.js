@@ -15,7 +15,8 @@ module.exports = {
       url: 'https://www.amazon.com.br/'
     },
     mobile: 'iphone-xr',
-    desktop: 'macbook-15'
+    desktop: 'macbook-15',
+    bookId: 3,
   },
     experimentalWebKitSupport: true,
     video: false,
