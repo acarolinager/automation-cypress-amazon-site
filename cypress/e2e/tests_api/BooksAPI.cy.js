@@ -6,7 +6,7 @@ describe('Books API', () => {
   before(() => {
     const requestBody = {
       "clientName": "Ana Test",
-      "clientEmail": "anatestt@test.com",
+      "clientEmail": "ana4@test.com",
   };
     // Gerar token
     cy.api({
